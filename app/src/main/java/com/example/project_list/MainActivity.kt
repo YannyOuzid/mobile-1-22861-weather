@@ -55,16 +55,21 @@ class MainActivity : AppCompatActivity() {
                 //body
 
 
-                var jsonBody = "{\"list\": [" + body + "]}"
+                var jsonBody = "{\"apiweather\": [" + body + "]}"
                 Log.i("JSON", jsonBody)
 
                 val gson = GsonBuilder().create()
-                var stationList = gson.fromJson(jsonBody, Weather::class.java)
+                var weatherList = gson.fromJson(body, Weather::class.java)
 
-                // Log.i("JSON", stationList.stations[0].name)
+                Log.i("JSON", weatherList.list[0].main.temp.toString())
+                Log.i("JSON", "Feels Like:" + weatherList.list[0].main.feels_like.toString())
+
+                Log.i("JSON", weatherList.city.name)
+                Log.i("JSON", "Coordinates: Lat (${weatherList.city.coord.lat}) and Lon (${weatherList.city.coord.lat})")
+
 
                 runOnUiThread {
-                    recyclerStationList.adapter = StationListAdapter(stationList.list)
+                   recyclerStationList.adapter = StationListAdapter(weatherList.list)
 
                 }
             }
@@ -73,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class StationListAdapter(val list: List<WeatherStation>)
+class StationListAdapter(val apilist: List<WeatherStation>)
     :
         RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
@@ -88,7 +93,9 @@ class StationListAdapter(val list: List<WeatherStation>)
         // TODO("Not yet implemented")
 
 
-        holder.itemView.cod.text = list[position].cod.toString()
+        holder.itemView.dt.text = apilist[position].dt.toString()
+        holder.itemView.humidity.text = apilist[position].main.humidity.toString()
+        holder.itemView.pressure.text = apilist[position].main.pressure.toString()
 
 
     }
@@ -96,7 +103,7 @@ class StationListAdapter(val list: List<WeatherStation>)
     override fun getItemCount(): Int {
         ///  TODO("Not yet implemented")
 
-        return list.size
+        return apilist.size
     }
 
 
