@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        recyclerStationList.setBackgroundColor(Color.BLUE)
+
         recyclerStationList.layoutManager = LinearLayoutManager(this)
 
         getApi();
