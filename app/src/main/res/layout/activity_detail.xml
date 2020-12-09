@@ -7,6 +7,13 @@
     tools:context=".RecyclerDetail">
 
     <TextView
+        android:id="@+id/countryDescriptionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
         android:id="@+id/countryTempView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,4 +40,5 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView" />
+
 </LinearLayout>

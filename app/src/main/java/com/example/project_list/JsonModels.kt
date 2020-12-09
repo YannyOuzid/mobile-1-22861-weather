@@ -6,6 +6,6 @@ class WeatherMain (val temp: Double, val feels_like: Double, val pressure: Doubl
 
 class Weatharray( val id: Int, val main: String, val description: String)
 
-class WeatherStation (val main: WeatherMain, val id: Int, val name: String, val dt: Int)
+class WeatherStation (val main: WeatherMain, val weather: List<Weatharray>, val id: Int, val name: String, val dt: Int)
 
 class Weather(val list: List<WeatherStation>)

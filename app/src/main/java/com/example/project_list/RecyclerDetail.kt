@@ -12,6 +12,7 @@ class RecyclerDetail : AppCompatActivity() {
         val title = intent.getStringExtra(CustomViewHolder.DETAIL_TITLE_KEY)
         supportActionBar?.title = title
 
+        countryDescriptionView.text = intent.getStringExtra(CustomViewHolder.Country_description)
         countryTempView.text = intent.getStringExtra(CustomViewHolder.Country_temp)
         countryFeelsView.text = intent.getStringExtra(CustomViewHolder.Country_feels_like)
         countryHumidityView.text = intent.getStringExtra(CustomViewHolder.Country_humidity)

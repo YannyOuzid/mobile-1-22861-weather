@@ -109,7 +109,8 @@ class CustomViewHolder(view: View, var data:WeatherStation?= null) : RecyclerVie
         val Country_temp = "Country_temp"
         val Country_feels_like = "Country_feels_like"
         val Country_humidity = "Country_humidity"
-        val Country_pressure = "Country_pressur"
+        val Country_pressure = "Country_pressure"
+        val Country_description = "Country_description"
         val DETAIL_TITLE_KEY = "ActionBarTitle"
 
     }
@@ -118,12 +119,13 @@ class CustomViewHolder(view: View, var data:WeatherStation?= null) : RecyclerVie
         view.setOnClickListener {
 
             Log.i(LOGCAT_CATEGORY,"Recycler view Item has been clicked")
-            Log.i(LOGCAT_CATEGORY, "Dt is " + data?.dt)
+            Log.i(LOGCAT_CATEGORY, "Dt is " + data?.weather?.get(0)?.description)
 
             val intent = Intent(view.context, RecyclerDetail::class.java)
 
             intent.putExtra(DETAIL_TITLE_KEY,"Details on " + data?.name)
 
+            intent.putExtra(Country_description, data?.weather?.get(0)?.description)
             intent.putExtra(Country_temp, data?.main?.temp.toString())
             intent.putExtra(Country_feels_like, data?.main?.feels_like.toString())
             intent.putExtra(Country_humidity, data?.main?.humidity.toString())
