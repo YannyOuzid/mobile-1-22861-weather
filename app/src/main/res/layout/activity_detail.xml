@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#FFFFFF"
+        android:background="#02E1CC"
         android:fontFamily="@font/montserrat"
         android:text="TextView" />
 
@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#FAEF8E"
         android:fontFamily="@font/montserrat"
         android:text="TextView" />
 
@@ -28,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#FDE409"
         android:fontFamily="@font/montserrat"
         android:text="TextView" />
 
@@ -36,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#FF9800"
         android:fontFamily="@font/montserrat"
         android:text="TextView" />
 
@@ -44,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#F44336"
         android:fontFamily="@font/montserrat"
         android:text="TextView" />
 
